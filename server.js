@@ -24,7 +24,7 @@ const connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : null,
-  database : 'vitta'
+  database : 'project_one'
 });
 
 connection.connect(err => err? console.error(err):null);
@@ -65,7 +65,7 @@ app.get('/api/data', function(req, res) {
     if (err) throw err;
     
     data['orders'] = rows;
-
+    
     res.send(JSON.stringify(data));
   });
 });
