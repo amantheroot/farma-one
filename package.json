@@ -14,7 +14,7 @@
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "setup": "npm install && cd client && npm install",
-    "resetdb": "mysql -u root < ./DB/resetDB.sql"
+    "resetdb": "mysql -u root < ./DB/resetDB.sql && mysql -u root < ./DB/insertData.sql"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
