@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 const mapStateToProps = store => {
   return {
-    companies: store.companies,
     products: store.products,
     stocks: store.stocks,
     customers: store.customers,

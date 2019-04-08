@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import {fetchCompanies} from "./actions/companiesActions";
 import {fetchProducts} from "./actions/productsActions";
 import {fetchStocks} from "./actions/stocksActions";
 import {fetchCustomers} from "./actions/customersActions";
@@ -15,7 +14,6 @@ import HomePage from "./components/pages/homePage";
 
 const mapStateToProps = store => {
   return {
-    companies: store.companies,
     products: store.products,
     stocks: store.stocks,
     customers: store.customers,
@@ -36,7 +34,6 @@ class toConnectApp extends Component {
   }
 
   handleData = data => {
-    this.props.dispatch(fetchCompanies(data.companies));
     this.props.dispatch(fetchProducts(data.products));
     this.props.dispatch(fetchStocks(data.stocks));
     this.props.dispatch(fetchCustomers(data.customers));

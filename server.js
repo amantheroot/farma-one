@@ -31,15 +31,8 @@ connection.connect(err => err? console.error(err):null);
 
 app.get('/api/data', function(req, res) {
   const data = {};
-
-  let query = 'SELECT * FROM companies';
-  connection.query(query, function(err,rows,fields) {
-    if (err) throw err;
-
-    data['companies'] = rows;
-  });
   
-  query = 'SELECT * FROM products';
+  let query = 'SELECT * FROM products';
   connection.query(query, function(err,rows,fields) {
     if (err) throw err;
     
