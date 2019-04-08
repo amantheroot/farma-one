@@ -4,9 +4,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import {fetchProducts} from "./actions/productsActions";
 import {fetchStocks} from "./actions/stocksActions";
-import {fetchCustomers} from "./actions/customersActions";
-import {fetchSuppliers} from "./actions/suppliersActions";
-import {fetchOrders} from "./actions/ordersActions";
 
 import Layout from "./components/layout";
 
@@ -15,10 +12,7 @@ import HomePage from "./components/pages/homePage";
 const mapStateToProps = store => {
   return {
     products: store.products,
-    stocks: store.stocks,
-    customers: store.customers,
-    suppliers: store.suppliers,
-    orders: store.orders
+    stocks: store.stocks
   };
 };
 
@@ -36,9 +30,6 @@ class toConnectApp extends Component {
   handleData = data => {
     this.props.dispatch(fetchProducts(data.products));
     this.props.dispatch(fetchStocks(data.stocks));
-    this.props.dispatch(fetchCustomers(data.customers));
-    this.props.dispatch(fetchSuppliers(data.suppliers));
-    this.props.dispatch(fetchOrders(data.orders));
   }
 
   render() {

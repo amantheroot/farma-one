@@ -4,10 +4,7 @@ import { connect } from "react-redux";
 const mapStateToProps = store => {
   return {
     products: store.products,
-    stocks: store.stocks,
-    customers: store.customers,
-    suppliers: store.suppliers,
-    orders: store.orders
+    stocks: store.stocks
   };
 };
 
@@ -17,10 +14,7 @@ class toConnectHomePage extends Component {
       <div>
         <p>{JSON.stringify({
           products: this.props.products,
-          stocks: this.props.stocks,
-          customers: this.props.customers,
-          suppliers: this.props.suppliers,
-          orders: this.props.orders
+          stocks: this.props.stocks
         })}</p>
       </div>
     );

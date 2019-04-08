@@ -44,28 +44,7 @@ app.get('/api/data', function(req, res) {
     if (err) throw err;
     
     data['stocks'] = rows;
-  });
 
-  query = 'SELECT * FROM customers';
-  connection.query(query, function(err,rows,fields) {
-    if (err) throw err;
-    
-    data['customers'] = rows;
-  });
-
-  query = 'SELECT * FROM suppliers';
-  connection.query(query, function(err,rows,fields) {
-    if (err) throw err;
-    
-    data['suppliers'] = rows;
-  });
-
-  query = 'SELECT * FROM orders';
-  connection.query(query, function(err,rows,fields) {
-    if (err) throw err;
-    
-    data['orders'] = rows;
-    
     res.send(JSON.stringify(data));
   });
 });
