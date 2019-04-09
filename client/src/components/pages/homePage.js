@@ -28,7 +28,9 @@ class toConnectHomePage extends Component {
   render() {
     return (
       <div className="home">
-        
+        <div className="home__overlay">
+          <h1 className="home__quote"><q>WE GIVE YOU THE BEST</q></h1>
+        </div>
       </div>
     );
   }
