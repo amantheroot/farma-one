@@ -49,4 +49,34 @@ app.get('/api/data', function(req, res) {
   });
 });
 
+app.post('/api/email', function(req, res) {
+  const emailText = JSON.stringify(req.body);
+
+  const nodemailer = require('nodemailer');
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'iamnotdannydevito@gmail.com',
+      pass: 'IAMDANNYDEVITO'
+    }
+  });
+
+  const mailOptions = {
+    from: 'iamnotdannydevito@gmail.com',
+    to: 'amantheroot@gmail.com',
+    subject: 'Order Placed! YAY!',
+    text: emailText
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.send(JSON.stringify({'success': 'drink beer and congratulations!'}));
+    }
+  });
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}...`));

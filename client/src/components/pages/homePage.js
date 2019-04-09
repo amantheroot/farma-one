@@ -4,18 +4,31 @@ import { connect } from "react-redux";
 const mapStateToProps = store => {
   return {
     products: store.products,
-    stocks: store.stocks
+    stocks: store.stocks,
+    cart: store.cart
   };
 };
 
 class toConnectHomePage extends Component {
+  sendEmail = () => {
+    const orderDetails = {
+      data: 'ORDER'
+    };
+    fetch('/api/email', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify(orderDetails)
+    }).then(res => res.json()).then(res => console.log(res));
+      
+  }
+
   render() {
     return (
-      <div>
-        <p>{JSON.stringify({
-          products: this.props.products,
-          stocks: this.props.stocks
-        })}</p>
+      <div className="home">
+        
       </div>
     );
   }

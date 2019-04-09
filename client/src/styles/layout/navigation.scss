@@ -1,0 +1,33 @@
+.navigation {
+  .nav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+
+    .nav__logo {
+      width: 120px;
+    }
+    .nav__basket {
+      .nav__basket--logo {
+        width: 50px;
+      }
+      & > div {
+        display: inline-block;
+      }
+    }
+  }
+  .nav__links {
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        padding: 10px;
+        background-color: lightgray;
+        margin: 0 10px;
+      }
+    }
+  }
+}

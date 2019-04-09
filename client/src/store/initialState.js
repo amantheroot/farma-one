@@ -1,4 +1,5 @@
 export default {
     products: [],
-    stocks: []
+    stocks: [],
+    cart: []
 };

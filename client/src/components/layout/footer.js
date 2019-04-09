@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 class Footer extends Component {
   render() {
     return (
-      <footer>
-        <h1>Foot</h1>
+      <footer className="footer">
+        <div>Copyright &copy; {new Date().getFullYear()} AMAN KUMAR</div>
+        <div>Design By Abiram Sajeev</div>
       </footer>
     );
   }

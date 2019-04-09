@@ -12,7 +12,8 @@ import HomePage from "./components/pages/homePage";
 const mapStateToProps = store => {
   return {
     products: store.products,
-    stocks: store.stocks
+    stocks: store.stocks,
+    cart: store.cart
   };
 };
 
