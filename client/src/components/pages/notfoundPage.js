@@ -12,8 +12,8 @@ const mapStateToProps = store => {
 class toConnectNotFoundPage extends Component {
   render() {
     return (
-      <div className="products">
-        <h1>Products</h1>
+      <div className="notfound">
+        <h1>404 Not Found</h1>
       </div>
     );
   }
