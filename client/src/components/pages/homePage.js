@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 const mapStateToProps = store => {
   return {
     products: store.products,
@@ -30,6 +32,7 @@ class toConnectHomePage extends Component {
       <div className="home">
         <div className="home__overlay">
           <h1 className="home__quote"><q>WE GIVE YOU THE BEST</q></h1>
+          <Link to="/products"><button>BUY NOW!</button></Link>
         </div>
       </div>
     );
