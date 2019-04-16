@@ -16,13 +16,7 @@ class ToConnectNavigation extends Component {
     return (
       <nav className="navigation">
         <div className="nav__header">
-          <img className="nav__logo" src={Logo} alt="logo" />
-          <div className="nav__search">
-            <input type="text" placeholder="Search For Products..." />
-            <button>
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </div>
+          <Link to="/"><img className="nav__logo" src={Logo} alt="logo" /></Link>
           <div className="nav__basket">
             <img className="nav__basket--logo" src={Basket} alt="basket" />
             <div>
@@ -30,15 +24,11 @@ class ToConnectNavigation extends Component {
               <div>{this.props.cart.length} items</div>
             </div>
           </div>
-          <div className="nav__login">
-            <button>LOGIN</button> | <button>SIGN UP</button>
-          </div>
         </div>
         <div className="nav__links">
           <ul>
-            <li><Link to="/">HOME</Link></li>
-            <li><Link to="/vegetables">VEGETABLES</Link></li>
-            <li><Link to="/fruits">FRUITS</Link></li>
+            <li><Link to="/products">Buy Now</Link></li>
+            <li><Link to="/producers">Our Producers</Link></li>
           </ul>
         </div>
       </nav>

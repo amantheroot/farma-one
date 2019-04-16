@@ -57,14 +57,14 @@ app.post('/api/email', function(req, res) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'iamnotdannydevito@gmail.com',
-      pass: 'IAMDANNYDEVITO'
+      user: 'usernameisabhi@gmail.com',
+      pass: 'photron2'
     }
   });
 
   const mailOptions = {
-    from: 'iamnotdannydevito@gmail.com',
-    to: 'amantheroot@gmail.com',
+    from: 'usernameisabhi@gmail.com',
+    to: 'farmaonein@gmail.com',
     subject: 'Order Placed! YAY!',
     text: emailText
   };
