@@ -39,11 +39,11 @@ app.get('/api/data', function(req, res) {
     data['products'] = rows;
   });
 
-  query = 'SELECT * FROM stocks';
+  query = 'SELECT * FROM suppliers';
   connection.query(query, function(err,rows,fields) {
     if (err) throw err;
     
-    data['stocks'] = rows;
+    data['suppliers'] = rows;
 
     res.send(JSON.stringify(data));
   });
