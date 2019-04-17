@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import Product from "../subcomponents/product";
+
 const mapStateToProps = store => {
   return {
     products: store.products,
@@ -13,7 +15,8 @@ class toConnectProductsPage extends Component {
   render() {
     return (
       <div className="products">
-        <h1>Products</h1>
+        <h1>Our Products</h1>
+        <Product/>
       </div>
     );
   }
