@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 
-const mapStateToProps = store => {
-  return {
-    products: store.products,
-    suppliers: store.suppliers,
-    cart: store.cart
-  };
-};
-
-class toConnectNotFoundPage extends Component {
+class NotFoundPage extends Component {
   render() {
     return (
       <div className="notfound">
@@ -18,7 +9,5 @@ class toConnectNotFoundPage extends Component {
     );
   }
 }
-
-const NotFoundPage = connect(mapStateToProps)(toConnectNotFoundPage);
 
 export default NotFoundPage;

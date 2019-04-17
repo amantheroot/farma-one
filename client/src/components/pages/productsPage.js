@@ -6,7 +6,6 @@ import Product from "../subcomponents/product";
 const mapStateToProps = store => {
   return {
     products: store.products,
-    suppliers: store.suppliers,
     cart: store.cart
   };
 };
