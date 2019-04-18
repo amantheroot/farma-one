@@ -108,7 +108,7 @@ function handleDataBody(body) {
   
   Order Information 🎁:
     PRODUCTS: ${orderList}
-    Total Charge: ${subtotal}
+    Total Charge: ${subtotal}/-
     Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
   `;
   return bodyText;
