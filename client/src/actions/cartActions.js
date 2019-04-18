@@ -4,10 +4,10 @@ export function addCartItem(cartItem) {
     payload: cartItem
   }
 }
-export function changeCartItem(product_id, product_qty) {
+export function changeCartItem(cartItem) {
   return {
     type: "CHANGE_CART_ITEM",
-    payload: {product_id, product_qty}
+    payload: cartItem
   }
 }
 export  function removeCartItem(id) {

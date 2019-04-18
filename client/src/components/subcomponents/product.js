@@ -62,15 +62,14 @@ class toConnectProduct extends Component {
   addItem = () => {
     const product_qty = Number.parseInt(this.refs.qtyinput.value);
     if (product_qty > 0) {
-      const cartItem = {...this.props.product, product_qty};
-      this.props.dispatch(addCartItem(cartItem));
+      this.props.dispatch(addCartItem({product_id: this.props.product.product_id, product_qty}));
     }
     this.qtyResetClass();
   }
   changeItem = () => {
     const product_qty = Number.parseInt(this.refs.qtyinput.value);
     if (product_qty > 0) {
-      this.props.dispatch(changeCartItem(this.props.product.product_id, product_qty));
+      this.props.dispatch(changeCartItem({product_id: this.props.product.product_id, product_qty}));
     } else if (product_qty === 0) {
       this.props.dispatch(removeCartItem(this.props.product.product_id));
     }

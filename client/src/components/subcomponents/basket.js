@@ -21,12 +21,12 @@ const images = importAll(require.context('../../assets/images/products', false, 
 
 class ToConnectBasket extends Component {
   qtyInc = (item) => {
-    this.props.dispatch(changeCartItem(item.product_id, item.product_qty + 1));
+    this.props.dispatch(changeCartItem({product_id: item.product_id, product_qty: item.product_qty + 1}));
   }
   qtyDec = (item) => {
     const qty = item.product_qty;
     if (qty > 1) {
-      this.props.dispatch(changeCartItem(item.product_id, qty - 1));
+      this.props.dispatch(changeCartItem({product_id: item.product_id, product_qty: qty - 1}));
     } else {
       this.props.dispatch(removeCartItem(item.product_id));
     }
@@ -37,17 +37,19 @@ class ToConnectBasket extends Component {
   render() {
     let subtotal = 0;
     const cartItems = this.props.cart.map(item => {
+      const product = this.props.products.find(product => product.product_id === item.product_id);
+      console.log(product);
       const image = images.find(img => {
         return Number.parseInt(img.split('/').pop().split(".").shift()) === item.product_id;
       });
-      const productprice = Math.round(item.product_price*item.product_qty*100)/100;
+      const productprice = Math.round(product.product_price*item.product_qty*100)/100;
       subtotal += productprice;
       return (
       <li key={keygen(item)}>
         <div>
-          <img src={image} alt={`product_image_${item.product_name}`}/>
+          <img src={image} alt={`product_image_${product.product_name}`}/>
           <div>
-            <span>{item.product_name}</span>
+            <span>{product.product_name}</span>
             <div>
               <button onClick={() => this.qtyDec(item)}>−</button>
               <span>{item.product_qty}</span>
