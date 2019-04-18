@@ -14,6 +14,13 @@ function importAll(r) {
 }
 const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 class toConnectProduct extends Component {
+  inputClass = () => {
+    let classname = '';
+    if (this.itemInCartCheck()) {
+      classname += " inCart"
+    }
+    return classname;
+  }
   qtyChangedClass = () => {
     const {qtyinput} = this.refs;
     qtyinput.classList.add('qtyChanged');
@@ -69,18 +76,10 @@ class toConnectProduct extends Component {
     }
     this.qtyResetClass();
   }
-  inputClass = () => {
-    let classname = '';
-    if (this.itemInCartCheck()) {
-      classname += " inCart"
-    }
-    return classname;
-  }
   render() {
     const image = images.find(img => {
       return Number.parseInt(img.split('/').pop().split(".").shift()) === this.props.product.product_id;
     });
-    
     return (
       <div className="product">
         <header className={this.itemInCartCheck() ? 'inCart' : ''}>{this.props.product.product_name}{!this.itemInCartCheck() ? ' (in basket)' : ''}</header>
