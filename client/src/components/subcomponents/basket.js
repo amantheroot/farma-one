@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import {changeCartItem, removeCartItem} from "../../actions/cartActions";
+
 import keygen from "../../assets/keygen";
 
 import {Link} from "react-router-dom";
@@ -18,6 +20,20 @@ function importAll(r) {
 const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
 class ToConnectBasket extends Component {
+  qtyInc = (item) => {
+    this.props.dispatch(changeCartItem(item.product_id, item.product_qty + 1));
+  }
+  qtyDec = (item) => {
+    const qty = item.product_qty;
+    if (qty > 1) {
+      this.props.dispatch(changeCartItem(item.product_id, qty - 1));
+    } else {
+      this.props.dispatch(removeCartItem(item.product_id));
+    }
+  }
+  itemRemove = (product_id) => {
+    this.props.dispatch(removeCartItem(product_id));
+  }
   render() {
     let subtotal = 0;
     const cartItems = this.props.cart.map(item => {
@@ -32,9 +48,14 @@ class ToConnectBasket extends Component {
           <img src={image} alt={`product_image_${item.product_name}`}/>
           <div>
             <span>{item.product_name}</span>
-            <span>Qty. {item.product_qty}</span>
+            <div>
+              <button onClick={() => this.qtyDec(item)}>−</button>
+              <span>{item.product_qty}</span>
+              <button onClick={() => this.qtyInc(item)}>+</button>
+            </div>
             <span>Rs. {productprice}</span>
           </div>
+          <button onClick={() => this.itemRemove(item.product_id)}>X</button>
         </div>
       </li>
       );
