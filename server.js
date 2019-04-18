@@ -93,7 +93,7 @@ function handleDataBody(body) {
     orderList += `
     Product No.${id+1} => 
       Name: ${product.product_name}
-      Price: ${product.product_price}
+      Price: ${product.product_price}/-
       Quantity (kg): ${cartItem.product_qty}
     `;
   })
