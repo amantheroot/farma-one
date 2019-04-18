@@ -11,6 +11,12 @@ const mapStateToProps = store => {
 };
 
 class toConnectCheckoutPage extends Component {
+  appendZero = (num) => {
+    return num < 10 ? `0${num}` : num;
+  }
+  formatDate = (date) => {
+    return `${date.getFullYear()}-${this.appendZero(date.getMonth() + 1)}-${this.appendZero(date.getDate())} ${this.appendZero(date.getHours())}-${this.appendZero(date.getMinutes())}-${this.appendZero(date.getSeconds())}`;
+  }
   placeOrder = e => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -26,7 +32,7 @@ class toConnectCheckoutPage extends Component {
       customer,
       cart: this.props.cart,
       products,
-      orderTime: new Date()
+      orderTime: this.formatDate(new Date())
     };
     
     fetch('/api/order', {

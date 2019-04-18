@@ -52,9 +52,8 @@ CREATE TABLE orders (
   customer_id INT UNSIGNED NOT NULL,
   product_id INT UNSIGNED NOT NULL,
   product_qty_sold INT UNSIGNED NOT NULL,
-  product_price_sold FLOAT UNSIGNED NOT NULL,
   order_time TIMESTAMP NOT NULL,
-  order_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  order_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (order_id),
   FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
   FOREIGN KEY (product_id) REFERENCES products(product_id)

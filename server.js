@@ -49,6 +49,41 @@ app.get('/api/data', function(req, res) {
   });
 });
 
+function checkNull(str) {
+  if (str === '') {
+    return 'NULL';
+  }
+  return `'${str}'`;
+}
+
+function orderValues(body) {
+  const order_id = Math.round(Math.random()*100000);
+  let string = '';
+  body.cart.forEach(cartitem => {
+    string += `(@custkey, ${cartitem.product_id}, ${cartitem.product_qty}, '${body.orderTime}', ${order_id}) `;
+  });
+  return string;
+}
+
+function insertDataIntoDB(body) {
+  let query = `INSERT INTO customers (customer_name, customer_address, customer_phone, customer_email) VALUES ('${body.customer.name}', '${body.customer.address}', ${checkNull(body.customer.phone)}, ${checkNull(body.customer.email)})`;
+  connection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+  });
+
+  query = 'SET @custkey = LAST_INSERT_ID()';
+  connection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+  });
+
+  query = `INSERT INTO orders(customer_id, product_id, product_qty_sold, order_time, order_id) VALUES ${orderValues(body)}`;
+  connection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+    console.log('SUCCESSFULLY ADDED DATA!');
+  });
+
+}
+
 function handleDataBody(body) {
   const bodyText = JSON.stringify(body);
   return bodyText;
@@ -80,6 +115,7 @@ app.post('/api/order', function(req, res) {
     } else {
       console.log('Email sent: ' + info.response);
       res.end();
+      insertDataIntoDB(req.body);
     }
   });
 });
