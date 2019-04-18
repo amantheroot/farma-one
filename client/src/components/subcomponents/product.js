@@ -89,7 +89,7 @@ class toConnectProduct extends Component {
           <span>Qty. (Kgs) </span>
           <button onClick={this.qtyInc}>+</button>
           <input ref="qtyinput" onKeyPress={this.qtyChange} defaultValue={this.qtySet()} type="text" className={this.inputClass()}/>
-          <button onClick={this.qtyDec}>-</button>
+          <button onClick={this.qtyDec}>−</button>
           {this.itemInCartCheck() ? <button onClick={this.changeItem}>CHANGE <i className="fa fa-shopping-basket" aria-hidden="true"></i></button> : <button onClick={this.addItem}>ADD <i className="fa fa-shopping-basket" aria-hidden="true"></i></button>}
         </footer>
       </div>
