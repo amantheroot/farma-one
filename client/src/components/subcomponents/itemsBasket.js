@@ -33,12 +33,14 @@ class ToConnectItemsBasket extends Component {
     this.props.dispatch(removeCartItem(product_id));
   }
   render() {
+    let subtotal = 0;
     const cartItems = this.props.cart.map(item => {
       const product = this.props.products.find(product => product.product_id === item.product_id);
       const image = images.find(img => {
         return Number.parseInt(img.split('/').pop().split(".").shift()) === item.product_id;
       });
       const productprice = Math.round(product.product_price*item.product_qty*100)/100;
+      subtotal += productprice;
       return (
       <li key={keygen(item)}>
         <div>
@@ -58,11 +60,17 @@ class ToConnectItemsBasket extends Component {
       );
     });
     return (
-      <div className="itemsbasket">
-        <ul>
-          {cartItems}
-        </ul>
-      </div>
+      <React.Fragment>
+        <div className="itemsbasket">
+          <ul>
+            {cartItems}
+          </ul>
+        </div>
+        <div>
+          <div>Sub Total: <span>Rs. {subtotal}</span></div>
+          <div>Delivery Charges: <span>**</span></div>
+        </div>
+      </React.Fragment>
     );
   }
 }

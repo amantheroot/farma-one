@@ -25,15 +25,11 @@ class ToConnectBasket extends Component {
         {this.props.cart.length > 0 ? 
           <div>
             <ItemsBasket/>
-            <div>
-              <div>Sub Total: <span>Rs. {subtotal}</span></div>
-              <div>Delivery Charges: <span>**</span></div>
-            </div>
             <Link to="/checkout"><button>CHECKOUT</button></Link>`
           </div> 
           : 
           <div>
-            The Cart Is Empty :(
+            The Basket Is Empty :(
           </div>
         }
       </div>
