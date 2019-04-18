@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import {changeCartItem, addCartItem, removeCartItem} from "../../actions/cartActions";
+
 const mapStateToProps = store => {
   return {
     cart: store.cart
@@ -12,18 +14,84 @@ function importAll(r) {
 }
 const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 class toConnectProduct extends Component {
+  qtyChangedClass = () => {
+    const {qtyinput} = this.refs;
+    qtyinput.classList.add('qtyChanged');
+  }
+  qtyResetClass = () => {
+    const {qtyinput} = this.refs;
+    qtyinput.className = this.inputClass();
+  }
+  qtyChange = e => {
+    const regex = new RegExp(/^\d+$/);
+    if (!regex.test(e.key)) {
+      e.preventDefault();
+    }
+    this.qtyChangedClass();
+  }
+  qtySet = () => {
+    const cartItem = this.itemInCartCheck();
+    if (!cartItem) {
+      return 1;
+    }
+    return cartItem.product_qty;
+  }
+  qtyInc = () => {
+    const qtyvalue = Number.parseInt(this.refs.qtyinput.value);
+    this.refs.qtyinput.value = qtyvalue + 1;
+    this.qtyChangedClass();
+  }
+  qtyDec = () => {
+    const qtyvalue = Number.parseInt(this.refs.qtyinput.value);
+    if (qtyvalue > 0) {
+      this.refs.qtyinput.value = qtyvalue - 1;
+      this.qtyChangedClass();
+    }
+  }
+  itemInCartCheck = () => {
+    const cartItem = this.props.cart.find(crt => crt.product_id === this.props.product.product_id);
+    return cartItem;
+  }
+  addItem = () => {
+    const product_qty = Number.parseInt(this.refs.qtyinput.value);
+    if (product_qty > 0) {
+      const cartItem = {...this.props.product, product_qty};
+      this.props.dispatch(addCartItem(cartItem));
+    }
+    this.qtyResetClass();
+  }
+  changeItem = () => {
+    const product_qty = Number.parseInt(this.refs.qtyinput.value);
+    if (product_qty > 0) {
+      this.props.dispatch(changeCartItem(this.props.product.product_id, product_qty));
+    } else if (product_qty === 0) {
+      this.props.dispatch(removeCartItem(this.props.product.product_id));
+    }
+    this.qtyResetClass();
+  }
+  inputClass = () => {
+    let classname = '';
+    if (this.itemInCartCheck()) {
+      classname += " inCart"
+    }
+    return classname;
+  }
   render() {
     const image = images.find(img => {
       return Number.parseInt(img.split('/').pop().split(".").shift()) === this.props.product.product_id;
     });
+    
     return (
       <div className="product">
-        <header>{this.props.product.product_name}</header>
+        <header className={this.itemInCartCheck() ? 'inCart' : ''}>{this.props.product.product_name}{!this.itemInCartCheck() ? ' (in basket)' : ''}</header>
         <img src={image} alt={`product_image_${this.props.product.product_name.split(' ').join('_')}`} />
+        <div>Rs. {this.props.product.product_price} per kg</div>
         <footer>
           <span>Qty. (Kgs) </span>
-          <input type="text"/>
-          <button>ADD <i className="fa fa-shopping-basket" aria-hidden="true"></i></button>
+          <button onClick={this.qtyInc}>+</button>
+          <input ref="qtyinput" onKeyPress={this.qtyChange} defaultValue={this.qtySet()} type="text" className={this.inputClass()}/>
+          <button onClick={this.qtyDec}>-</button>
+          {this.itemInCartCheck() ? <button onClick={this.changeItem}>CHANGE <i className="fa fa-shopping-basket" aria-hidden="true"></i></button> : <button onClick={this.addItem}>ADD <i className="fa fa-shopping-basket" aria-hidden="true"></i></button>}
         </footer>
       </div>
     );
