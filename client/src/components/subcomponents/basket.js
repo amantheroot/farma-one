@@ -35,7 +35,6 @@ class ToConnectBasket extends Component {
             <span>Qty. {item.product_qty}</span>
             <span>Rs. {productprice}</span>
           </div>
-          <span>X</span>
         </div>
       </li>
       );
