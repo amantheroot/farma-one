@@ -7,12 +7,19 @@ const mapStateToProps = store => {
   };
 };
 
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 class toConnectProduct extends Component {
   render() {
+    const image = images.find(img => {
+      return Number.parseInt(img.split('/').pop().split(".").shift()) === this.props.product.product_id;
+    });
     return (
       <div className="product">
         <header>{this.props.product.product_name}</header>
-        
+        <img src={image} alt={`product_image_${this.props.product.product_name.split(' ').join('_')}`} />
         <footer>
           <span>Qty. (Kgs) </span>
           <input type="text"/>
