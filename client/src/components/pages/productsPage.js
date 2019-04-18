@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 
 import Product from "../subcomponents/product";
 
+import keygen from "../../assets/keygen";
+
 const mapStateToProps = store => {
   return {
     products: store.products,
@@ -12,10 +14,13 @@ const mapStateToProps = store => {
 
 class toConnectProductsPage extends Component {
   render() {
+    const productstabs = this.props.products.map(product => <Product key={keygen(product)} product={product} />)
     return (
       <div className="products">
         <h1>Our Products</h1>
-        <Product/>
+        <div className="prodcuts__menu">
+          {productstabs}
+        </div>
       </div>
     );
   }

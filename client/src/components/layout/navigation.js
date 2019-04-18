@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import {Link} from "react-router-dom";
 
 import Logo from "../../assets/images/logo.svg";
-import Basket from "../../assets/images/basket.svg";
 
 const mapStateToProps = store => {
   return {
@@ -18,7 +17,7 @@ class ToConnectNavigation extends Component {
         <div className="nav__header">
           <Link to="/"><img className="nav__logo" src={Logo} alt="logo" /></Link>
           <div className="nav__basket">
-            <img className="nav__basket--logo" src={Basket} alt="basket" />
+            <i className="fa fa-shopping-basket" aria-hidden="true"></i>
             <div>
               <div>My Basket</div>
               <div>{this.props.cart.length} items</div>
