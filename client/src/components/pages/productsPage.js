@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import {Link} from "react-router-dom";
+
 import Product from "../subcomponents/product";
 
 import keygen from "../../assets/keygen";
@@ -21,6 +23,7 @@ class toConnectProductsPage extends Component {
         <div className="prodcuts__menu">
           {productstabs}
         </div>
+        {this.props.cart.length > 0 ? <Link to="/checkout"><button>CHECKOUT</button></Link> : null}
       </div>
     );
   }
