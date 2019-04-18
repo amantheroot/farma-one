@@ -14,12 +14,6 @@ const mapStateToProps = store => {
 
 class ToConnectBasket extends Component {
   render() {
-    let subtotal = 0;
-    this.props.cart.forEach(item => {
-      const product = this.props.products.find(product => product.product_id === item.product_id);
-      const productprice = Math.round(product.product_price*item.product_qty*100)/100;
-      subtotal += productprice;
-    });
     return (
       <div className="basket">
         {this.props.cart.length > 0 ? 

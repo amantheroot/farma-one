@@ -49,7 +49,7 @@ app.get('/api/data', function(req, res) {
   });
 });
 
-app.post('/api/email', function(req, res) {
+app.post('/api/order', function(req, res) {
   const emailText = JSON.stringify(req.body);
 
   const nodemailer = require('nodemailer');
@@ -74,7 +74,8 @@ app.post('/api/email', function(req, res) {
       console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
-      res.send(JSON.stringify({'success': 'drink beer and congratulations!'}));
+      res.redirect(303,'/');
+      res.end();
     }
   });
 });

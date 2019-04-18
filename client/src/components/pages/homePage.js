@@ -7,21 +7,6 @@ import HomeBG3 from "../../assets/images/homebg3.jpg";
 import AbhiramPic from "../../assets/images/abhiram.png";
 import AmanPic from "../../assets/images/aman.png";
 class HomePage extends Component {
-  // sendEmail = () => {
-  //   const orderDetails = {
-  //     data: 'ORDER'
-  //   };
-  //   fetch('/api/email', {
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     method: 'post',
-  //     body: JSON.stringify(orderDetails)
-  //   }).then(res => res.json()).then(res => console.log(res));
-      
-  // }
-
   render() {
     return (
       <div className="home">
