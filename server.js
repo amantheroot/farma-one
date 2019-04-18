@@ -66,7 +66,7 @@ function orderValues(body) {
 }
 
 function insertDataIntoDB(body) {
-  let query = `INSERT INTO customers (customer_name, customer_address, customer_phone, customer_email) VALUES ('${body.customer.name}', '${body.customer.address}', ${checkNull(body.customer.phone)}, ${checkNull(body.customer.email)})`;
+  let query = `INSERT INTO customers (customer_name, customer_address, customer_phone, customer_email) VALUES ('${body.customer.name}', '${body.customer.address}', '${body.customer.phone}', ${checkNull(body.customer.email)})`;
   connection.query(query, function(err, rows, fields) {
     if (err) throw err;
   });
@@ -86,6 +86,7 @@ function insertDataIntoDB(body) {
 
 function handleDataBody(body) {
   const bodyText = JSON.stringify(body);
+
   return bodyText;
 }
 

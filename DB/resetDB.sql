@@ -14,7 +14,7 @@ USE project_one;
 CREATE TABLE customers (
   customer_name VARCHAR(30) NOT NULL,
   customer_address VARCHAR(300) NOT NULL,
-  customer_phone VARCHAR(10) NULL,
+  customer_phone VARCHAR(10) NOT NULL,
   customer_email VARCHAR(30) NULL,
   customer_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (customer_id)

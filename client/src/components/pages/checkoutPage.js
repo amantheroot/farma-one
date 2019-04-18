@@ -61,7 +61,7 @@ class toConnectCheckoutPage extends Component {
               <label htmlFor="address">Location:</label>
               <textarea rows="4" id="address" type="text" name="address" required />
               <label htmlFor="phone">Phone:</label>
-              <input id="phone" type="tel" pattern="[0-9]{10}" name="phone" />
+              <input id="phone" type="tel" pattern="[0-9]{10}" name="phone" required />
               <label htmlFor="email">Email:</label>
               <input id="email" type="email" name="email" />
               <div>
