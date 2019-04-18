@@ -49,8 +49,13 @@ app.get('/api/data', function(req, res) {
   });
 });
 
+function handleDataBody(body) {
+  const bodyText = JSON.stringify(body);
+  return bodyText;
+}
+
 app.post('/api/order', function(req, res) {
-  const emailText = JSON.stringify(req.body);
+  const emailText = handleDataBody(req.body);
 
   const nodemailer = require('nodemailer');
 
@@ -74,7 +79,6 @@ app.post('/api/order', function(req, res) {
       console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
-      res.redirect(303,'/');
       res.end();
     }
   });

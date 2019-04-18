@@ -14,7 +14,7 @@ class toConnectCheckoutPage extends Component {
   placeOrder = e => {
     e.preventDefault();
     const orderDetails = {
-      data: 'ORDER'
+      data: 'ORDER NOW PLEASE!'
     };
     fetch('/api/order', {
       headers: {
@@ -23,8 +23,9 @@ class toConnectCheckoutPage extends Component {
       },
       method: 'POST',
       body: JSON.stringify(orderDetails)
+    }).finally(() => {
+      window.location.href = "/thankyou";
     });
-      
   }
   render() {
     return (
