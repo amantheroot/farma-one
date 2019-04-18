@@ -47,9 +47,9 @@ class HomePage extends Component {
           <article>
             <h1>The Point Of Farma One</h1>
             <p>The Organic Food Era is seeing its worst condition in which both the consumers and the producers suffer.</p>
-            <p>Organic Crops are bought by mediators at prices between <strong>10-22%</strong> of the original Market Selling Price. Not only this but they are selling the produce at a market price <strong>1.5 to 3</strong> times the price of regular vegetables.
+            <p>Organic Crops are bought by mediators at prices between <strong>10-22%</strong> of the original Market Selling Price. Not only this but they are selling the produce at a market price <strong>1.5 to 3</strong> times the price of regular vegetables.</p>
             <p>This kind of greedy attitude in the industry is worsening the condition for the farmers.</p>
-            Moreover the accessibility to organic products are very limited unlike the widespread markets over the internet.</p>
+            <p>Moreover the accessibility to organic products are very limited unlike the widespread markets over the internet.</p>
           </article>
           <article>
             <h1>What Do We Do?</h1>
