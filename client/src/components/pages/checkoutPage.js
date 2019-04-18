@@ -13,9 +13,22 @@ const mapStateToProps = store => {
 class toConnectCheckoutPage extends Component {
   placeOrder = e => {
     e.preventDefault();
-    const orderDetails = {
-      data: 'ORDER NOW PLEASE!'
+    const formData = new FormData(e.target);
+    const customer = {
+      name: formData.get('name'),
+      address: formData.get('address'),
+      phone: formData.get('phone'),
+      email: formData.get('email')
     };
+    const products = this.props.products.filter(product => this.props.cart.some(cartItem => cartItem.product_id === product.product_id));
+
+    const orderDetails = {
+      customer,
+      cart: this.props.cart,
+      products,
+      orderTime: new Date()
+    };
+    
     fetch('/api/order', {
       headers: {
         'Accept': 'application/json',
