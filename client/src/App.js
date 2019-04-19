@@ -29,8 +29,8 @@ class toConnectApp extends Component {
 
   getData = () => {
     fetch('/api/data')
-      .then(res => res.json())
-      .then(data => this.handleData(data));
+      .then(res => res.ok ? res.json() : null)
+      .then(data => data == null ? null : this.handleData(data));
   }
 
   handleData = data => {
