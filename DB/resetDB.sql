@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS project_one;
+DROP DATABASE IF EXISTS farma_one;
 
-CREATE DATABASE IF NOT EXISTS project_one;
+CREATE DATABASE IF NOT EXISTS farma_one;
 
-USE project_one;
+USE farma_one;
 
 -- TABLES
 -- CREATE TABLE categories (

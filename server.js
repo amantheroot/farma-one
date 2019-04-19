@@ -24,7 +24,7 @@ const connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : null,
-  database : 'project_one'
+  database : 'farma_one'
 });
 
 connection.connect(err => err? console.error(err):null);

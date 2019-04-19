@@ -1,4 +1,4 @@
-USE project_one;
+USE farma_one;
 
 -- INSERT INTO categories(category_name) VALUES ('CATEGORYNAME');
 -- SET @catkey = LAST_INSERT_ID();
