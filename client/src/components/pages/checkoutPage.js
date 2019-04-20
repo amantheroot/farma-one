@@ -83,12 +83,14 @@ class toConnectCheckoutPage extends Component {
       body: JSON.stringify({order})
     });
 
-    apiOrder.catch(err =>{
-      console.error(err);
-      this.sendEmailviaJS(order);
-      window.location.href = "/thankyou"
+    apiOrder.then(res =>{
+      if (!res.ok) {
+        console.error(res.statusText);
+        this.sendEmailviaJS(order);
+      } else {
+        window.location.href = "/thankyou"
+      }
     });
-    apiOrder.then(() => window.location.href = "/thankyou");
   }
 
   render() {
