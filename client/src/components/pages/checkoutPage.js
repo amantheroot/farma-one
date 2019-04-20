@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import * as emailjs from "emailjs-com";
 
 import ItemsBasket from "../subcomponents/itemsBasket";
 
@@ -51,7 +52,13 @@ class toConnectCheckoutPage extends Component {
 
   sendEmailviaJS = order => {
     // SEND EMAIL
-    console.log(order);
+    const service_id = "gmail";
+    const template_id = "template_TedT6vbI";
+    const params = {
+      message_html: order
+    };
+    const user_id = "user_fNRo1xC7ac6VEymW5aOG9";
+    return emailjs.send(service_id, template_id, params, user_id);
   }
 
   placeOrder = e => {
@@ -72,7 +79,7 @@ class toConnectCheckoutPage extends Component {
       orderTime: this.formatDate(new Date())
     };
     
-    const order = this.handleOrderData(orderDetails);
+    const orderText = this.handleOrderData(orderDetails);
 
     const apiOrder = fetch('/api/order', {
       headers: {
@@ -80,13 +87,14 @@ class toConnectCheckoutPage extends Component {
         'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({order})
+      body: JSON.stringify(orderDetails)
     });
 
     apiOrder.then(res =>{
       if (!res.ok) {
         console.error(res.statusText);
-        this.sendEmailviaJS(order);
+        this.sendEmailviaJS(orderText)
+          .then(() => window.location.href = "/thankyou");
       } else {
         window.location.href = "/thankyou"
       }
