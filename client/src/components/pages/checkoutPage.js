@@ -11,12 +11,49 @@ const mapStateToProps = store => {
 };
 
 class toConnectCheckoutPage extends Component {
-  appendZero = (num) => {
+  appendZero = num => {
     return num < 10 ? `0${num}` : num;
   }
-  formatDate = (date) => {
+
+  formatDate = date => {
     return `${date.getFullYear()}-${this.appendZero(date.getMonth() + 1)}-${this.appendZero(date.getDate())} ${this.appendZero(date.getHours())}-${this.appendZero(date.getMinutes())}-${this.appendZero(date.getSeconds())}`;
   }
+
+  handleOrderData = body => {
+    let subtotal = 0;
+    let orderList = '';
+    body.cart.forEach((cartItem, id) => {
+      const product = body.products.find(product => product.product_id === cartItem.product_id);
+      subtotal += product.product_price;
+      orderList += `
+      Product No.${id+1} => 
+        Name: ${product.product_name}
+        Price: ${product.product_price}/-
+        Quantity (kg): ${cartItem.product_qty}
+      `;
+    })
+    const bodyText = `
+    🎉 ORDER PLACED: 🎉
+  
+    Customer Information 🙆🏽‍:
+      Name: ${body.customer.name}
+      Address: ${body.customer.address}
+      Phone: ${body.customer.phone}
+      Email: ${body.customer.email !== '' ? body.customer.email : 'NA'}
+    
+    Order Information 🎁:
+      PRODUCTS: ${orderList}
+      Total Charge: ${subtotal}/-
+      Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
+    `;
+    return bodyText;
+  }
+
+  sendEmailviaJS = order => {
+    // SEND EMAIL
+    console.log(order);
+  }
+
   placeOrder = e => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -35,17 +72,25 @@ class toConnectCheckoutPage extends Component {
       orderTime: this.formatDate(new Date())
     };
     
-    fetch('/api/order', {
+    const order = this.handleOrderData(orderDetails);
+
+    const apiOrder = fetch('/api/order', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify(orderDetails)
-    }).finally(() => {
-      window.location.href = "/thankyou";
+      body: JSON.stringify({order})
     });
+
+    apiOrder.catch(err =>{
+      console.error(err);
+      this.sendEmailviaJS(order);
+      window.location.href = "/thankyou"
+    });
+    apiOrder.then(() => window.location.href = "/thankyou");
   }
+
   render() {
     return (
       <div className="checkout">

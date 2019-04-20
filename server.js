@@ -84,38 +84,8 @@ function insertDataIntoDB(body) {
 
 }
 
-function handleDataBody(body) {
-  let subtotal = 0;
-  let orderList = '';
-  body.cart.forEach((cartItem, id) => {
-    const product = body.products.find(product => product.product_id === cartItem.product_id);
-    subtotal += product.product_price;
-    orderList += `
-    Product No.${id+1} => 
-      Name: ${product.product_name}
-      Price: ${product.product_price}/-
-      Quantity (kg): ${cartItem.product_qty}
-    `;
-  })
-  const bodyText = `
-  🎉 ORDER PLACED: 🎉
-
-  Customer Information 🙆🏽‍:
-    Name: ${body.customer.name}
-    Address: ${body.customer.address}
-    Phone: ${body.customer.phone}
-    Email: ${body.customer.email !== '' ? body.customer.email : 'NA'}
-  
-  Order Information 🎁:
-    PRODUCTS: ${orderList}
-    Total Charge: ${subtotal}/-
-    Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
-  `;
-  return bodyText;
-}
-
 app.post('/api/order', function(req, res) {
-  const emailText = handleDataBody(req.body);
+  const emailText = req.body.order;
 
   const nodemailer = require('nodemailer');
 
