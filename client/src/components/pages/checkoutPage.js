@@ -46,8 +46,6 @@ class toConnectCheckoutPage extends Component {
     })
     const emailBody = (
       <div>
-        <h1>ORDER PLACED! HOORAY!!!</h1>
-        <br/>
         <h2><strong>Customer Information:</strong></h2>
         <ul>
           <li><strong>Name:</strong> {body.customer.name}</li>
