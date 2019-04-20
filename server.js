@@ -85,11 +85,9 @@ function insertDataIntoDB(body) {
 }
 
 function handleOrderData(body) {
-  let subtotal = 0;
   let orderList = '';
   body.cart.forEach((cartItem, id) => {
     const product = body.products.find(product => product.product_id === cartItem.product_id);
-    subtotal += product.product_price;
     orderList += `
     Product No.${id+1} => 
       Name: ${product.product_name}
@@ -108,7 +106,7 @@ function handleOrderData(body) {
   
   Order Information 🎁:
     PRODUCTS: ${orderList}
-    Total Charge: ${subtotal}/-
+    Total Charge: ${body.subtotal}/-
     Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
   `;
   return bodyText;

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import * as emailjs from "emailjs-com";
+import ReactDOMServer from 'react-dom/server';
 
 import ItemsBasket from "../subcomponents/itemsBasket";
+import keygen from '../../assets/keygen';
 
 const mapStateToProps = store => {
   return {
@@ -21,41 +23,75 @@ class toConnectCheckoutPage extends Component {
   }
 
   handleOrderData = body => {
-    let subtotal = 0;
-    let orderList = '';
+    // let orderList = '';
+    let orderListHTML = [];
     body.cart.forEach((cartItem, id) => {
       const product = body.products.find(product => product.product_id === cartItem.product_id);
-      subtotal += product.product_price;
-      orderList += `
-      Product No.${id+1} => 
-        Name: ${product.product_name}
-        Price: ${product.product_price}/-
-        Quantity (kg): ${cartItem.product_qty}
-      `;
+      // orderList += `
+      // Product No.${id+1} => 
+      //   Name: ${product.product_name}
+      //   Price: ${product.product_price}/-
+      //   Quantity (kg): ${cartItem.product_qty}
+      // `;
+      orderListHTML.push(
+        <li key={keygen(id)}>
+          <h3>Product No.{id+1} => </h3>
+          <ul>
+            <li><strong>Name:</strong> {product.product_name}</li>
+            <li><strong>Price:</strong> {product.product_price}/-</li>
+            <li><strong>Quantity:</strong> {cartItem.product_qty}</li>
+          </ul>
+        </li>
+      );
     })
-    const bodyText = `
-    🎉 ORDER PLACED: 🎉
+    const emailBody = (
+      <div>
+        <h1>ORDER PLACED! HOORAY!!!</h1>
+        <br/>
+        <h2><strong>Customer Information:</strong></h2>
+        <ul>
+          <li><strong>Name:</strong> {body.customer.name}</li>
+          <li><strong>Address:</strong> {body.customer.address}</li>
+          <li><strong>Phone:</strong> {body.customer.phone}</li>
+          <li><strong>Email:</strong> {body.customer.email !== '' ? body.customer.email : 'NA'}</li>
+        </ul>
+        <br/>
+        <h2><strong>Order Information:</strong></h2>
+        <ul>
+          <li>
+            <strong>Products:</strong>
+            <ul>
+              {orderListHTML}
+            </ul>
+          </li>
+          <li><strong>Total Charge:</strong> {body.subtotal}/-</li>
+          <li><strong>Time (YYYY-MM-DD HH-MM-SS):</strong> {body.orderTime}</li>
+        </ul>
+      </div>
+    );
+    // const bodyText = `
+    // 🎉 ORDER PLACED: 🎉
   
-    Customer Information 🙆🏽‍:
-      Name: ${body.customer.name}
-      Address: ${body.customer.address}
-      Phone: ${body.customer.phone}
-      Email: ${body.customer.email !== '' ? body.customer.email : 'NA'}
+    // Customer Information 🙆🏽‍:
+    //   Name: ${body.customer.name}
+    //   Address: ${body.customer.address}
+    //   Phone: ${body.customer.phone}
+    //   Email: ${body.customer.email !== '' ? body.customer.email : 'NA'}
     
-    Order Information 🎁:
-      PRODUCTS: ${orderList}
-      Total Charge: ${subtotal}/-
-      Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
-    `;
-    return bodyText;
+    // Order Information 🎁:
+    //   PRODUCTS: ${orderList}
+    //   Total Charge: ${body.subtotal}/-
+    //   Time (YYYY-MM-DD HH-MM-SS): ${body.orderTime}
+    // `;
+    return ReactDOMServer.renderToStaticMarkup(emailBody);
   }
 
-  sendEmailviaJS = order => {
+  sendEmailviaJS = orderHTML => {
     // SEND EMAIL
     const service_id = "gmail";
     const template_id = "template_TedT6vbI";
     const params = {
-      message_html: order
+      message_html: orderHTML
     };
     const user_id = "user_fNRo1xC7ac6VEymW5aOG9";
     return emailjs.send(service_id, template_id, params, user_id);
@@ -72,14 +108,19 @@ class toConnectCheckoutPage extends Component {
     };
     const products = this.props.products.filter(product => this.props.cart.some(cartItem => cartItem.product_id === product.product_id));
 
+    const subtotal = this.props.cart.reduce((a, b) => {
+      return a + (products.find(prod => prod.product_id === b.product_id).product_price * b.product_qty);
+    }, 0);
+
     const orderDetails = {
       customer,
       cart: this.props.cart,
       products,
+      subtotal,
       orderTime: this.formatDate(new Date())
     };
     
-    const orderText = this.handleOrderData(orderDetails);
+    const orderHTML = this.handleOrderData(orderDetails);
 
     const apiOrder = fetch('/api/order', {
       headers: {
@@ -93,7 +134,7 @@ class toConnectCheckoutPage extends Component {
     apiOrder.then(res =>{
       if (!res.ok) {
         console.error(res.statusText);
-        this.sendEmailviaJS(orderText)
+        this.sendEmailviaJS(orderHTML)
           .then(() => window.location.href = "/thankyou");
       } else {
         window.location.href = "/thankyou"
