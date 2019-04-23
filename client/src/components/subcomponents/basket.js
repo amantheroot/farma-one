@@ -17,12 +17,12 @@ class ToConnectBasket extends Component {
     return (
       <div className="basket">
         {this.props.cart.length > 0 ? 
-          <div>
+          <div className="basket__basket">
             <ItemsBasket/>
-            <Link to="/checkout"><button>CHECKOUT</button></Link>`
+            <Link to="/checkout"><button className="itemsbasket__checkout">CHECKOUT</button></Link>
           </div> 
           : 
-          <div>
+          <div className="basket__empty">
             The Basket Is Empty :(
           </div>
         }

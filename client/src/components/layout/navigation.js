@@ -18,13 +18,15 @@ class ToConnectNavigation extends Component {
         <div className="nav__header">
           <Link to="/"><img className="nav__logo" src={Logo} alt="logo" /></Link>
           <div className="nav__basket">
-            <i className="fa fa-shopping-basket" aria-hidden="true"></i>
-            <div>
-              <div>My Basket</div>
-              <div>{this.props.cart.length} items</div>
+            <div className="nav__basket--basket">
+              <i className="fa fa-shopping-basket" aria-hidden="true"></i>
+              <div>
+                <div>My Basket</div>
+                <div>{this.props.cart.length} items</div>
+              </div>
             </div>
+            <Basket/>
           </div>
-          <Basket/>
         </div>
         <div className="nav__links">
           <ul>

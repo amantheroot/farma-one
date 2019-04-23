@@ -43,16 +43,16 @@ class ToConnectItemsBasket extends Component {
       subtotal += productprice;
       return (
       <li key={keygen(item)}>
-        <div>
-          <img src={image} alt={`product_image_${product.product_name}`}/>
+        <div className="basket__product">
+          <img className="product__name" src={image} alt={`product_image_${product.product_name}`}/>
           <div>
-            <span>{product.product_name}</span>
+            <span className="basket__product--name">{product.product_name}</span>
             <div>
               <button onClick={() => this.qtyDec(item)}>−</button>
               <span>{item.product_qty}</span>
               <button onClick={() => this.qtyInc(item)}>+</button>
             </div>
-            <span>Rs. {productprice}</span>
+            <span className="basket__product--price">Rs. {productprice}</span>
           </div>
           <button onClick={() => this.itemRemove(item.product_id)}>X</button>
         </div>
@@ -66,7 +66,7 @@ class ToConnectItemsBasket extends Component {
             {cartItems}
           </ul>
         </div>
-        <div>
+        <div className="itemsbasket__subtotal">
           <div>Sub Total: <span>Rs. {subtotal}</span></div>
           <div>Delivery Charges: <span>**</span></div>
         </div>
