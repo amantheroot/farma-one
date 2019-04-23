@@ -3,7 +3,36 @@
   padding: 10px 0;
   background-color: $Color1;
   color: $Color5;
-  div {
-    margin: 2px 0;
+  .footer__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    ul {
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: 10px;
+        font-size: 2em;
+        a {
+          color: white;
+        }
+      }
+    }
+    & > div {
+      margin-right: 25px;
+      p {
+        margin: 0;
+        a {
+          color: white;
+          font-style: italic;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .footer__copyright {
+    margin-top: 10px;
+    padding: 10px;
   }
 }

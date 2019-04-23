@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <div>
+        <div className="footer__contact">
           <ul>
             <li><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a></li>
             <li><a href="https://www.twitter.com" rel="noopener noreferrer" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
