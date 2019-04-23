@@ -13,15 +13,15 @@ class HomePage extends Component {
         <div className="homebg">
           <div className="homebg__1">
             <img src={HomeBG1} alt="home1"/>
-            <div>1</div>
+            <div><h1>Get Healthy While Revolutionizing To A New Era.</h1></div>
           </div>
           <div className="homebg__2">
             <img src={HomeBG2} alt="home2"/>
-            <div>2</div>
+            <div><h1>Get Healthy With More Affordability, Accessibility And Authenticity.</h1></div>
           </div>
           <div className="homebg__3">
             <img src={HomeBG3} alt="home3"/>
-            <div>3</div>
+            <div><h1>Get Healthy While Supporting The Farmers.</h1></div>
           </div>
         </div>
         <section className="home__about">

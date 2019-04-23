@@ -13,10 +13,17 @@
       animation-duration: 15s;
       div {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 200px;
+        left: 50px;
+        width: 450px;
+        padding: 20px;
         background-color: black;
         color: white;
+        font-family: $SecondaryFont;
+        font-weight: lighter;
+        h1 {
+          margin: 0;
+        }
       }
       img {
         position: absolute;
