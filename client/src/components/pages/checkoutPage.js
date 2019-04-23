@@ -172,7 +172,7 @@ class toConnectCheckoutPage extends Component {
                 <p>* At the moment payment via COD only is available.</p>
                 <p>* At the moment delivery of products is only available on Saturdays</p>
               </div>
-              <input type="submit" value="PLACE ORDER" />
+              <input className="placeorder" type="submit" value="PLACE ORDER" />
             </form>
           </React.Fragment>
           :

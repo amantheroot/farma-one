@@ -1,6 +1,32 @@
 .checkout {
+  padding: 25px;
+  h1 {
+    text-align: center;
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
   .ordersummary {
     width: 400px;
+  }
+  form {
+    & > div {
+      label {
+        display: block;
+        font-size: 1.05em;
+        margin-bottom: 5px;
+      }
+      input, textarea {
+        width: 300px;
+        padding: 10px;
+        font-size: 1.15em;
+      }
+    }
+    .placeorder {
+      cursor: pointer;
+      padding: 10px;
+    }
   }
   .checkout__empty {
     text-align: center;

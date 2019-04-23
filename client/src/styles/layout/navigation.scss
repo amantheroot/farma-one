@@ -22,6 +22,7 @@
         }
       }
       .basket {
+        z-index: 3;
         display: none;
         position: absolute;
         bottom: 0;
@@ -30,59 +31,7 @@
         background-color: gray;
         .basket__basket {
           width: 400px;
-          .itemsbasket {
-            ul {
-              list-style-type: none;
-              padding: 0;
-              li {
-                margin: 10px;
-                background-color: lightgray;
-                padding: 10px;
-                .basket__product {
-                  width: 100%;
-                  display: flex;
-                  align-items: center;
-                  img {
-                    height: 50px;
-                    width: 50px;
-                  }
-                  & > div {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    .basket__product--name {
-                      width: 100px;
-                      padding: 0 10px;
-                    }
-                    .basket__product--price {
-                      white-space: nowrap;
-                      padding-right: 10px;
-                    }
-                    & > div {
-                      display: flex;
-                      align-items: center;
-                      span {
-                        margin: 0 5px;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          .itemsbasket__subtotal {
-            padding: 10px;
-            & > div {
-              span {
-                float: right;
-              }
-            }
-          }
-          .itemsbasket__checkout {
-            width: 100%;
-            padding: 10px;
-          }
+          z-index: 99;
         }
         .basket__empty {
           white-space: nowrap;
