@@ -23,7 +23,7 @@ class toConnectProductsPage extends Component {
         <div className="products__menu">
           {productstabs}
         </div>
-        {this.props.cart.length > 0 ? <Link to="/checkout"><button>CHECKOUT</button></Link> : null}
+        {this.props.cart.length > 0 ? <Link to="/checkout"><button className="products__checkout">CHECKOUT</button></Link> : null}
       </div>
     );
   }

@@ -72,4 +72,12 @@
       }
     }
   }
+  .products__checkout {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 50px;
+    padding: 12px;
+    font-size: 1.25em;
+  }
 }
