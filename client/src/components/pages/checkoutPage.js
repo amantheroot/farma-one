@@ -147,7 +147,9 @@ class toConnectCheckoutPage extends Component {
           <React.Fragment>
             <h1>Checkout</h1>
             <h2>Order Summary</h2>
-            <ItemsBasket />
+            <div className="ordersummary">
+              <ItemsBasket />
+            </div>
             <h2>Customer Information</h2>
             <form onSubmit={this.placeOrder}>
               <label htmlFor="name">Name:</label>
