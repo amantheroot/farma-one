@@ -97,6 +97,7 @@ class toConnectCheckoutPage extends Component {
 
   placeOrder = e => {
     e.preventDefault();
+    document.querySelector(".placeorder").disabled = true;
     const formData = new FormData(e.target);
     const customer = {
       name: formData.get('name'),
