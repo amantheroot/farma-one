@@ -1,7 +1,7 @@
 export default {
     products: [
         {product_id: 1, product_name: 'Ground Nut Oil', product_price: 45},
-        {product_id: 2, product_name: 'Mangoes', product_price: 45},
+        {product_id: 2, product_name: 'Mangoes', product_price: 110},
         {product_id: 3, product_name: 'Rice', product_price: 45},
         {product_id: 4, product_name: 'Chilli', product_price: 45},
         {product_id: 5, product_name: 'Red Gram', product_price: 45},
