@@ -30,8 +30,11 @@ class ToConnectNavigation extends Component {
         </div>
         <div className="nav__links">
           <ul>
+            <li><Link to="/">About Us</Link></li>
             <li><Link to="/products">Buy Now</Link></li>
+            <li><Link to="/ourteam">Our Team</Link></li>
             <li><Link to="/producers">Our Producers</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
       </nav>

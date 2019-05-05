@@ -8,8 +8,10 @@ import {fetchSuppliers} from "./actions/suppliersActions";
 import Layout from "./components/layout";
 
 import HomePage from "./components/pages/homePage";
+import OurTeamPage from "./components/pages/ourteamPage";
 import ProdcutsPage from "./components/pages/productsPage";
 import ProducersPage from "./components/pages/producersPage";
+import ContactPage from "./components/pages/contactPage";
 import CheckoutPage from "./components/pages/checkoutPage";
 import ThankYouPage from "./components/pages/thankyouPage";
 import NotFoundPage from "./components/pages/notfoundPage";
@@ -44,8 +46,10 @@ class toConnectApp extends Component {
         <Layout>
           <Switch>
             <Route path="/" component={HomePage} exact/>
+            <Route path="/ourteam" component={OurTeamPage}/>
             <Route path="/products" component={ProdcutsPage}/>
             <Route path="/producers" component={ProducersPage}/>
+            <Route path="/contact" component={ContactPage}/>
             <Route path="/checkout" component={CheckoutPage}/>
             <Route path="/thankyou" component={ThankYouPage}/>
             <Route component={NotFoundPage}/>
