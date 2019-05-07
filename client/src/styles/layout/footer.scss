@@ -1,38 +1,28 @@
 .footer {
+  color: black;
   text-align: center;
   padding: 10px 0;
-  background-color: $Color1;
-  color: $Color5;
+  a {
+    color: black;
+  }
   .footer__contact {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;
     ul {
       padding: 0;
-      li {
-        display: inline-block;
-        margin: 10px;
-        font-size: 2em;
-        a {
-          color: white;
+      &.nav__links {
+        li {
+          font-size: 1em;
         }
       }
-    }
-    & > div {
-      margin-right: 25px;
-      p {
-        margin: 0;
-        a {
-          color: white;
-          font-style: italic;
-          text-decoration: underline;
-        }
+      li {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 1.75em;
       }
     }
   }
   .footer__copyright {
     margin-top: 10px;
     padding: 10px;
+    font-size: 0.85em;
   }
 }

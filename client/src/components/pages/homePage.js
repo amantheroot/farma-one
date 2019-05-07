@@ -4,8 +4,6 @@ import HomeBG1 from "../../assets/images/homebg1.jpg";
 import HomeBG2 from "../../assets/images/homebg2.jpg";
 import HomeBG3 from "../../assets/images/homebg3.jpg";
 
-import AbhiramPic from "../../assets/images/abhiram.png";
-import AmanPic from "../../assets/images/aman.png";
 class HomePage extends Component {
   render() {
     return (
@@ -42,19 +40,6 @@ class HomePage extends Component {
             <p><em>We regulate the prices such that both the farmer and consumer are benefitted, just by eliminating mediator.</em></p>
             <p>Weeding out the mediators will benefit the farmers as well as the consumers as you will get healthy organic food at affordable prices.</p>
             <p>While dealing with authenticity, every customer has the privilage to visit any of our associated farms for inspection.</p>
-          </article>
-          <article className="team">
-            <h1>The Team</h1>
-            <div>
-              <div>
-                <div><img src={AbhiramPic} alt="abhiram"/></div>
-                <figcaption>Sudhini Abhiram Reddy</figcaption>
-              </div>
-              <div>
-                <div><img src={AmanPic} alt="aman"/></div>
-                <figcaption>Aman Kumar</figcaption>
-              </div>
-            </div>
           </article>
         </section>
       </div>
