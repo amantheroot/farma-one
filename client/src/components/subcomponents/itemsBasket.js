@@ -54,7 +54,7 @@ class ToConnectItemsBasket extends Component {
             </div>
             <span className="basket__product--price">Rs. {productprice}</span>
           </div>
-          <button onClick={() => this.itemRemove(item.product_id)}>X</button>
+          <button onClick={() => this.itemRemove(item.product_id)}>✕</button>
         </div>
       </li>
       );

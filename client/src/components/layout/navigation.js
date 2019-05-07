@@ -31,6 +31,7 @@ class ToConnectNavigation extends Component {
               <div>{this.props.cart.length} items</div>
             </div>
           </div>
+          <div className="nav__basket--whitebar"></div>
           <Basket/>
         </div>
       </nav>
