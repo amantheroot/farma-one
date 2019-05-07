@@ -35,6 +35,13 @@
             }
           }
         }
+        .basket__product--cross {
+          padding: 0;
+          border: none;
+          font-size: 1.25em;
+          margin-top: -1px;
+          margin-left: 15px;
+        }
       }
     }
   }
@@ -47,7 +54,16 @@
     }
   }
 }
-.itemsbasket__checkout {
-  width: 100%;
-  padding: 10px;
+.basket__basket {
+  .itemsbasket__checkout {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid black;
+    background-color: lighten(black, 10%);
+    color: white;
+    &:hover {
+      background-color: black;
+    }
+  }
 }

@@ -4,6 +4,11 @@
   align-items: center;
   padding: 25px;
 
+  button {
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+  }
   .nav__logo {
     width: 120px;
   }
@@ -40,6 +45,7 @@
       background-color: white;
     }
     .basket {
+      cursor: default;
       z-index: 3;
       display: none;
       position: absolute;
