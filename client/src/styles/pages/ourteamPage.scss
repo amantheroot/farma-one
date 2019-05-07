@@ -1,0 +1,32 @@
+.team {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div {
+        & > div {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid black;
+            overflow: hidden;
+            position: relative;
+            margin: 0 25px;
+            img {
+            position: absolute;
+            width: 150%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            }
+        }
+        figcaption {
+            font-weight: bold;
+            margin-top: 12px;
+            font-size: 1.15em;
+        }
+        }
+    }
+}
