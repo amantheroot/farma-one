@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import HomeBG1 from "../../assets/images/homebg1.jpg";
-import HomeBG2 from "../../assets/images/homebg2.jpg";
-import HomeBG3 from "../../assets/images/homebg3.jpg";
+import {Link} from "react-router-dom";
 
 class HomePage extends Component {
   render() {
@@ -10,10 +8,9 @@ class HomePage extends Component {
       <div className="home">
         <div>
           <div className="homeimage__1 homeimage">
-            <img src={HomeBG1} alt="home1"/>
             <div>
               <h1>Get Healthy While Revolutionizing To A New Era.</h1>
-              <button>BUY NOW</button>
+              <Link to="/products"><button>BUY NOW</button></Link>
             </div>
           </div>
           <div className="home__about">
@@ -23,7 +20,6 @@ class HomePage extends Component {
         </div>
         <div>
           <div className="homeimage__2 homeimage">
-            <img src={HomeBG2} alt="home2"/>
             <div><h1>Get Healthy With More Affordability, Accessibility And Authenticity.</h1></div>
           </div>
           <div className="home__about">
@@ -36,7 +32,6 @@ class HomePage extends Component {
         </div>
         <div>
           <div className="homeimage__3 homeimage">
-            <img src={HomeBG3} alt="home3"/>
             <div><h1>Get Healthy While Supporting The Farmers.</h1></div>
           </div>
           <div className="home__about">
