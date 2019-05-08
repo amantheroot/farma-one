@@ -25,6 +25,7 @@
         // padding: 12px;
         header {
           background-color: white;
+          color: darken(white, 75%);
           text-align: center;
           padding: 15px;
           &.inCart {
@@ -46,12 +47,14 @@
           }
         }
         .product__price {
+          color: darken(white, 75%);
           padding: 15px;
           background-color: darken(white, 5%);
         }
       }
       footer {
         background-color: darken(white, 7%);
+        color: darken(white, 85%);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -61,6 +64,7 @@
           background-color: white;
           border: 1px solid gray;
           white-space: nowrap;
+          color: darken(white, 85%);
         }
         span {
           white-space: nowrap;
@@ -70,6 +74,7 @@
           border: 1px solid gray;
           padding: 2px;
           text-align: center;
+          color: darken(white, 85%);
           &.inCart {
             background-color: lightcoral;
           }
@@ -85,6 +90,7 @@
           border-radius: 5px;
           padding: 5px 10px;
           background-color: rgb(241, 205, 0);
+          color: darken(white, 85%);
         }
       }
     }
