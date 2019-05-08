@@ -63,10 +63,14 @@
       }
     }
     .home__about {  
-      width: 80vw;
+      width: 65vw;
       margin: 150px auto;
       h1 {
         font-size: 2em;
+      }
+      p {
+        font-size: 1.15em;
+        line-height: 1.5;
       }
     }
   }

@@ -11,17 +11,24 @@
     align-items: center;
     justify-content: center;
     .product {
-      background-color: lightgray;
-      border-radius: 5px;
+      cursor: pointer;
+      background-color: white;
       overflow: hidden;
-      width: 275px;
+      width: 300px;
+      padding: 15px;
+      border: 1px solid transparent;
+      &:hover {
+        border-color: lightgray;
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+      }
       & > div {
-        padding: 12px;
+        // padding: 12px;
         header {
+          background-color: white;
           text-align: center;
-          padding: 12px;
+          padding: 15px;
           &.inCart {
-            background-color: orange;
+            background-color: rgb(236, 176, 65);
           }
         }
         .product__image {
@@ -39,22 +46,30 @@
           }
         }
         .product__price {
-          padding-top: 12px;
-          padding-left: 12px;
+          padding: 15px;
+          background-color: darken(white, 5%);
         }
       }
       footer {
-        background-color: darken(lightgray, 10%);
+        background-color: darken(white, 7%);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 12px;
+        padding: 15px;
         font-size: 0.95em;
+        button {
+          background-color: white;
+          border: 1px solid gray;
+          white-space: nowrap;
+        }
         span {
           white-space: nowrap;
         }
         input {
-          width: 40px;
+          width: 30px;
+          border: 1px solid gray;
+          padding: 2px;
+          text-align: center;
           &.inCart {
             background-color: lightcoral;
           }
@@ -66,8 +81,10 @@
           display: grid;
           grid-template-columns: auto auto auto;
         }
-        button {
-          white-space: nowrap;
+        & > button {
+          border-radius: 5px;
+          padding: 5px 10px;
+          background-color: rgb(241, 205, 0);
         }
       }
     }
