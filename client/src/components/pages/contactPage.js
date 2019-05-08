@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class ContactPage extends Component {
+  formSubmit = e => {
+    e.preventDefault();
+  }
   render() {
     return (
       <div className="contact">
         <h1>We'd love to hear from you</h1>
         <p>Feel free to contact us about anything from regestering as a producer to any questions you may have about the products or just general queries, we would be delighted to help you :)</p>
-        <form>
+        <form onSubmit={this.formSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
             <input id="name" name="name"/>
