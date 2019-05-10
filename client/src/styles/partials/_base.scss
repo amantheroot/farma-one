@@ -7,6 +7,7 @@ body {
   font-family: $PrimaryFont;
   width: 100vw;
   overflow-x: hidden;
+  color: lighten(black, 25%);
 }
 a {
   text-decoration: none;

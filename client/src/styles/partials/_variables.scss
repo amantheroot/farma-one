@@ -1,13 +1,8 @@
 //// Colors
 // Theme
-$Color1: darkblue;
-$Color2: darken($Color1, 10%);
-// Background
-$Color3: white;
-// Foreground Text
-$Color4: black;
-// Text on ThemeColor
-$Color5: white;
+$Color1: lighten(black, 27%);
+$Color2: white;
+$Color3: black;
 
 //// Font
 $PrimaryFont: arial, Helvetica;

@@ -32,6 +32,7 @@ CREATE TABLE suppliers (
 CREATE TABLE products (
   product_name VARCHAR(30) NOT NULL,
   product_price FLOAT UNSIGNED NOT NULL,
+  product_qtyunit VARCHAR(3) NOT NULL,
   -- supplier_id INT UNSIGNED NOT NULL,
   -- category_id INT UNSIGNED NOT NULL,
   product_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
