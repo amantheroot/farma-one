@@ -2,6 +2,8 @@
   h1 {
     text-align: center;
     font-size: 2.5em;
+    // margin: 50px 0;
+    margin-bottom: 50px;
   }
   .products__menu {
     margin-bottom: 100px;
@@ -76,10 +78,10 @@
           text-align: center;
           color: darken(white, 85%);
           &.inCart {
-            background-color: lightcoral;
+            background-color: coral;
           }
           &.qtyChanged {
-            background-color: coral;
+            background-color: lightcoral;
           }
         }
         .product__qty {
@@ -89,8 +91,11 @@
         & > button {
           border-radius: 5px;
           padding: 5px 10px;
-          background-color: rgb(241, 205, 0);
+          background-color: $Color5;
           color: darken(white, 85%);
+          &:hover {
+            background-color: darken($Color5, 2%);
+          }
         }
       }
     }
@@ -99,8 +104,14 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 50px;
-    padding: 12px;
-    font-size: 1.25em;
+    margin: 75px;
+    font-size: 1em;
+    background: darken($Color1, 10%);
+    color: white;
+    border: none;
+    padding: 25px;
+    &:hover {
+      background-color: $Color4;
+    }
   }
 }

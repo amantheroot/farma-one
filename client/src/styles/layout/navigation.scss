@@ -19,6 +19,9 @@
       margin: 0 10px;
       a {
         color: $Color1;
+        &:hover {
+          color: $Color3;
+        }
       }
     }
   }
@@ -70,6 +73,9 @@
       margin-right: -2px;
       .basket {
         display: block;
+      }
+      .nav__basket--basket {
+        color: $Color4;
       }
     }
   }

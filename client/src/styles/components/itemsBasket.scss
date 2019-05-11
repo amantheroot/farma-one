@@ -64,7 +64,7 @@
     background-color: darken($Color1, 5%);
     color: $Color2;
     &:hover {
-      background-color: darken($Color1, 10%);
+      background-color: $Color4;
     }
   }
 }

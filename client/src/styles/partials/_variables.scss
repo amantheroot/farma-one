@@ -3,6 +3,8 @@
 $Color1: lighten(black, 27%);
 $Color2: white;
 $Color3: black;
+$Color4: darken($Color1, 15%);
+$Color5: gold;
 
 //// Font
 $PrimaryFont: arial, Helvetica;
