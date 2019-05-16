@@ -20,4 +20,4 @@ USE farma_one;
 
 INSERT INTO suppliers (supplier_name, supplier_address, supplier_phone, supplier_email) VALUES ('Urmilla Reddy Kuppireddy','Chennaram village, Achampel, Nagarkurnool dist.',NULL,NULL), ('Lavanya','Mahaboobnagar',NULL,NULL), ('Pavan Kumar','Kalvakoorthy',NULL,NULL), ('Laxmi','Pocharam',NULL,NULL), ('Kishore Kumar','Kalvakoorthy',NULL,NULL);
 
-INSERT INTO products (product_name, product_price, product_qtyunit) VALUES ('Ground Nut Oil', 45.0, 'Lit'), ('Mangoes', 110.0, 'Kg'), ('Rice', 45.0, 'Kg'), ('Chilli', 45.0, 'Kg'), ('Red Gram', 45.0, 'Kg'), ('Green Gram', 45.0, 'Kg'), ('Ground Nuts', 45.0, 'Kg'), ('Mustard', 45.0, 'Kg'), ('Dhanya', 45.0, 'Kg'), ('Turmeric', 45.0, 'Kg');
+INSERT INTO products (product_name, product_price, product_qtyunit) VALUES ('Ground Nut Oil', 45.0, 'Lit'), ('Mangoes', 120.0, 'Kg'), ('Rice', 45.0, 'Kg'), ('Chilli', 45.0, 'Kg'), ('Red Gram', 45.0, 'Kg'), ('Green Gram', 45.0, 'Kg'), ('Ground Nuts', 45.0, 'Kg'), ('Mustard', 45.0, 'Kg'), ('Dhanya', 45.0, 'Kg'), ('Turmeric', 45.0, 'Kg');
