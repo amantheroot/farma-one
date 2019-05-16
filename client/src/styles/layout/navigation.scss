@@ -22,6 +22,10 @@
         &:hover {
           color: $Color3;
         }
+        &.link--active {
+          color: $Color3;
+          text-shadow: 0 0 1px black;
+        }
       }
     }
   }

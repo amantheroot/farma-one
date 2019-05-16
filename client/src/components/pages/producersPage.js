@@ -17,8 +17,8 @@ class toConnectProducersPage extends Component {
         <div>
           <ol>
             {this.props.suppliers.map(prod => <li key={keygen(prod)}><div>
-            <p>Name: {prod.supplier_name}</p>
-            <p>Farm Located At: {prod.supplier_address}</p>
+            <p>Name: <em>{prod.supplier_name}</em></p>
+            <p>Farm Located At: <em>{prod.supplier_address}</em></p>
             </div></li>)}
           </ol>
         </div>

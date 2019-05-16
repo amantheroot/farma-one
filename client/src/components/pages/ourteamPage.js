@@ -5,19 +5,27 @@ import AmanPic from "../../assets/images/aman.png";
 class OurTeamPage extends Component {
   render() {
     return (
-      <article className="team">
+      <div className="team">
         <h1>The Team</h1>
         <div>
           <div>
-            <div><img src={AbhiramPic} alt="abhiram"/></div>
-            <figcaption>Sudhini Abhiram Reddy</figcaption>
+            <img src={AbhiramPic} alt="abhiram"/>
+            <div>
+              <h3>Sudhini Abhiram Reddy</h3>
+              <h4>Co Founder</h4>
+              <p>Quos ut sunt sed illum. Aut repudiandae ullam omnis tempore. Quam rerum tempore earum.</p>
+            </div>
           </div>
           <div>
-            <div><img src={AmanPic} alt="aman"/></div>
-            <figcaption>Aman Kumar</figcaption>
+            <div>
+              <h3>Aman Kumar</h3>
+              <h4>Co Founder</h4>
+              <p>Quos ut sunt sed illum. Aut repudiandae ullam omnis tempore. Quam rerum tempore earum.</p>
+            </div>
+            <img src={AmanPic} alt="aman"/>
           </div>
         </div>
-      </article>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import Logo from "../../assets/images/logo.svg";
 import Basket from '../subcomponents/basket';
@@ -15,13 +15,13 @@ class ToConnectNavigation extends Component {
   render() {
     return (
       <nav className="navigation">
-        <Link to="/"><img className="nav__logo" src={Logo} alt="logo" /></Link>
+        <NavLink to="/"><img className="nav__logo" src={Logo} alt="logo" /></NavLink>
         <ul className="nav__links">
-          <li><Link to="/">About Us</Link></li>
-          <li><Link to="/products">Buy Now</Link></li>
-          <li><Link to="/ourteam">Our Team</Link></li>
-          <li><Link to="/producers">Our Producers</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li><NavLink activeClassName="link--active" to="/" exact>About Us</NavLink></li>
+          <li><NavLink activeClassName="link--active" to="/products">Buy Now</NavLink></li>
+          <li><NavLink activeClassName="link--active" to="/ourteam">Our Team</NavLink></li>
+          <li><NavLink activeClassName="link--active" to="/producers">Our Producers</NavLink></li>
+          <li><NavLink activeClassName="link--active" to="/contact">Contact Us</NavLink></li>
         </ul>
         <div className="nav__basket">
           <div className="nav__basket--basket">
