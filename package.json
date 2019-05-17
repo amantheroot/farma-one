@@ -16,7 +16,7 @@
     "setup": "npm install && cd client && npm install",
     "resetdb": "mysql -u root < ./DB/resetDB.sql && mysql -u root < ./DB/insertData.sql",
     "build:client": "cd client && npm run build",
-    "deploy:client": "mv client/build/_redirects _redirects && npm run build:client && mv _redirects client/build/_redirects && cd client/build && netlify deploy --prod"
+    "deploy:client": "npm run build:client && cp _redirects client/build/_redirects && cd client/build && netlify deploy --prod"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

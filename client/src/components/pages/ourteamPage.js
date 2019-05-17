@@ -12,14 +12,14 @@ class OurTeamPage extends Component {
             <img src={AbhiramPic} alt="abhiram"/>
             <div>
               <h3>Sudhini Abhiram Reddy</h3>
-              <h4>Co Founder</h4>
+              <h4>Co-Founder</h4>
               <p>Quos ut sunt sed illum. Aut repudiandae ullam omnis tempore. Quam rerum tempore earum.</p>
             </div>
           </div>
           <div>
             <div>
               <h3>Aman Kumar</h3>
-              <h4>Co Founder</h4>
+              <h4>Co-Founder</h4>
               <p>Quos ut sunt sed illum. Aut repudiandae ullam omnis tempore. Quam rerum tempore earum.</p>
             </div>
             <img src={AmanPic} alt="aman"/>

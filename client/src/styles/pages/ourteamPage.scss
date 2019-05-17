@@ -23,6 +23,9 @@
                 h3 {
                     font-size: 2em;
                 }
+                h4 {
+                    text-transform: uppercase;
+                }
                 &:nth-child(odd) {
                     text-align: right;
                     margin: 0 50px;
