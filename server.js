@@ -143,4 +143,47 @@ app.post('/api/order', function(req, res) {
   });
 });
 
+app.post('/api/contactform', function(req, res) {
+  const emailText = `
+    🎉 CONTACT FROM SUBMITTED: 🎉
+
+      Name: ${req.body.name}
+
+      Email: ${req.body.email}
+
+      Phone: ${req.body.phone}
+
+      Subject: ${req.body.subject}
+
+      Message: ${req.body.message}
+  `;
+
+  const nodemailer = require('nodemailer');
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'usernameisabhi@gmail.com',
+      pass: 'photron2'
+    }
+  });
+
+  const mailOptions = {
+    from: 'usernameisabhi@gmail.com',
+    to: 'farmaonein@gmail.com',
+    subject: 'Contact Form Submitted! YAY!',
+    text: emailText
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.end();
+      insertDataIntoDB(req.body);
+    }
+  });
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}...`));

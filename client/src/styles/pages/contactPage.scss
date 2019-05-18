@@ -1,0 +1,31 @@
+.contact {
+    text-align: center;
+    p {
+        width: 600px;
+        margin: 0 auto;
+    }
+    form {
+        text-align: right;
+        background-color: darken($Color2, 5%);
+        display: inline-block;
+        padding: 50px;
+        margin: 50px auto;
+        & > div {
+            width: 375px;
+            display: flex;
+            justify-content: space-between;
+            margin: 25px;
+            label {
+                text-align: left;
+                display: inline-block;
+            }
+            input, textarea {
+                width: 250px;
+            }
+        }
+        & > input {
+            cursor: pointer;
+            text-align: right;
+        }
+    }
+}

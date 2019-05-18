@@ -1,9 +1,51 @@
 import React, { Component } from 'react';
+import * as emailjs from "emailjs-com";
 
 class ContactPage extends Component {
+  sendEmailviaJS = params => {
+    // SEND EMAIL
+    const service_id = "gmail";
+    const template_id = "contact_form_submit";
+    const user_id = "user_fNRo1xC7ac6VEymW5aOG9";
+    return emailjs.send(service_id, template_id, params, user_id);
+  }
+
   formSubmit = e => {
     e.preventDefault();
+    document.querySelector(".contactFormSubmit").disabled = true;
+    const formData = new FormData(e.target);
+    const submition = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
+    const apiSubmit = fetch('/api/contactform', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(submition)
+    });
+
+    apiSubmit.then(res =>{
+      if (!res.ok) {
+        console.error(res.statusText);
+        this.sendEmailviaJS(submition)
+          .then(() => {
+            alert("Thank You For Submitting The Contact Form. We Will Try To Respond To You As Quick As Possible :)");
+            window.location.href = "/";
+          });
+      } else {
+        alert("Thank You For Submitting The Contact Form. We Will Try To Respond To You As Quick As Possible :)");
+        window.location.href = "/";
+      }
+    });
   }
+
   render() {
     return (
       <div className="contact">
@@ -28,9 +70,9 @@ class ContactPage extends Component {
           </div>
           <div>
             <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message"/>
+            <textarea id="message" name="message" rows="5"/>
           </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="contactFormSubmit"/>
         </form>
       </div>
     );
