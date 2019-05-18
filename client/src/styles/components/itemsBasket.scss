@@ -1,5 +1,10 @@
 .itemsbasket {
   color: $Color1;
+  button {
+    background-color: white;
+    outline: none;
+    border: 1px solid $Color1;
+  }
   ul {
     list-style-type: none;
     padding: 0;

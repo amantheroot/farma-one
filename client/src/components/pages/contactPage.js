@@ -54,11 +54,11 @@ class ContactPage extends Component {
         <form onSubmit={this.formSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
-            <input id="name" name="name"/>
+            <input id="name" name="name" required/>
           </div>
           <div>
             <label htmlFor="email">Email:</label>
-            <input id="email" name="email" type="email"/>
+            <input id="email" name="email" type="email" required/>
           </div>
           <div>
             <label htmlFor="phone">Phone:</label>
@@ -66,11 +66,11 @@ class ContactPage extends Component {
           </div>
           <div>
             <label htmlFor="subject">Subject:</label>
-            <input id="subject" name="subject"/>
+            <input id="subject" name="subject" required/>
           </div>
           <div>
             <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" rows="5"/>
+            <textarea id="message" name="message" rows="5" required/>
           </div>
           <input type="submit" value="Submit" className="contactFormSubmit"/>
         </form>
