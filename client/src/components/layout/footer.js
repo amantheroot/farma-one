@@ -9,9 +9,9 @@ class Footer extends Component {
       <footer className="footer">
         <div className="footer__contact">
           <ul>
-            <li><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.twitter.com" rel="noopener noreferrer" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank" aria-label="Connect with us on facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.twitter.com" rel="noopener noreferrer" target="_blank" aria-label="Connect with us on twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank" aria-label="Connect with us on instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
           <ul className="nav__links">
             <li><Link to="/">About Us</Link></li>
