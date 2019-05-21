@@ -76,6 +76,12 @@
         font-size: 1.15em;
         line-height: 1.5;
       }
+      div {
+        margin: 25px 0;
+        iframe {
+          margin-top: 10px;
+        }
+      }
     }
   }
 }
