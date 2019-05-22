@@ -170,8 +170,9 @@ class toConnectCheckoutPage extends Component {
                 <input id="email" type="email" name="email" />
               </div>
               <div>
-                <p>* At the moment payment via COD only is available.</p>
-                <p>* At the moment delivery of products is only available on Saturdays</p>
+                {/* <p>* At the moment payment via COD only is available.</p>
+                <p>* At the moment delivery of products is only available on Saturdays</p> */}
+                <p>* At the moment only store pick-up facility is available or the transactions can be resolved by bilateral understanding between the consumer and the farmer.</p>
               </div>
               <input className="placeorder" type="submit" value="PLACE ORDER" />
             </form>
