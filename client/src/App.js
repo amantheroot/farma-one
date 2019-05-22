@@ -9,6 +9,7 @@ import Layout from "./components/layout";
 
 import HomePage from "./components/pages/homePage";
 import OurTeamPage from "./components/pages/ourteamPage";
+import BlogsPage from "./components/pages/blogsPage";
 import ProdcutsPage from "./components/pages/productsPage";
 import ProducersPage from "./components/pages/producersPage";
 import ContactPage from "./components/pages/contactPage";
@@ -47,6 +48,7 @@ class toConnectApp extends Component {
           <Switch>
             <Route path="/" component={HomePage} exact/>
             <Route path="/ourteam" component={OurTeamPage}/>
+            <Route path="/blogs" component={BlogsPage}/>
             <Route path="/products" component={ProdcutsPage}/>
             <Route path="/producers" component={ProducersPage}/>
             <Route path="/contact" component={ContactPage}/>

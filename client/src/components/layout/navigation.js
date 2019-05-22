@@ -19,6 +19,7 @@ class ToConnectNavigation extends Component {
         <ul className="nav__links">
           <li><NavLink activeClassName="link--active" to="/" exact>About Us</NavLink></li>
           <li><NavLink activeClassName="link--active" to="/products">Buy Now</NavLink></li>
+          <li><NavLink activeClassName="link--active" to="/blogs">Blogs</NavLink></li>
           <li><NavLink activeClassName="link--active" to="/ourteam">Our Team</NavLink></li>
           <li><NavLink activeClassName="link--active" to="/producers">Our Producers</NavLink></li>
           <li><NavLink activeClassName="link--active" to="/contact">Contact Us</NavLink></li>
