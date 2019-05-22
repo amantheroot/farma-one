@@ -50,6 +50,10 @@ class BlogsPage extends Component {
             <iframe title="ep163" width="640" height="360" src="https://www.youtube.com/embed/gQ-TReCjhAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p><em>Bhoomiputra Ep. 163</em></p>
           </div>
+          <div>
+            <iframe title="ep145" width="640" height="360" src="https://www.youtube.com/embed/bWPkeq72Kh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p><em>Bhoomiputra Ep. 145</em></p>
+          </div>
         </section>
       </div>
     );
