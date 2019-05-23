@@ -1,17 +1,19 @@
 .checkout {
-  padding: 25px;
+  padding: 50px;
   h1 {
     text-align: center;
     font-size: 3em;
   }
   h2 {
-    font-size: 1.75em;
+    font-size: 1.85em;
   }
   .ordersummary {
     width: 400px;
+    margin-bottom: 50px;
   }
   form {
     & > div {
+      margin: 20px 0;
       label {
         display: block;
         font-size: 1.05em;
@@ -21,11 +23,23 @@
         width: 300px;
         padding: 10px;
         font-size: 1.15em;
+        border: 1px solid black;
       }
     }
     .placeorder {
       cursor: pointer;
-      padding: 10px;
+      font-size: 0.8em;
+      background: darken($Color1, 10%);
+      color: white;
+      border: none;
+      padding: 20px;
+      &:hover {
+        background-color: $Color4;
+      }
+    }
+    p {
+      width: 600px;
+      line-height: 1.25;
     }
   }
   .checkout__empty {
