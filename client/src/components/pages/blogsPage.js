@@ -43,15 +43,15 @@ class BlogsPage extends Component {
         <section>
           <h1>Our Farmers</h1>
           <div>
-            <iframe title="ep50" width="640" height="360" src="https://www.youtube.com/embed/iMivoBBdWdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="ep50" width="640" height="360" src="https://www.youtube.com/embed/iMivoBBdWdw" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <p><em>Bhoomiputra Ep. 50</em></p>
           </div>
           <div>
-            <iframe title="ep163" width="640" height="360" src="https://www.youtube.com/embed/gQ-TReCjhAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="ep163" width="640" height="360" src="https://www.youtube.com/embed/gQ-TReCjhAI" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <p><em>Bhoomiputra Ep. 163</em></p>
           </div>
           <div>
-            <iframe title="ep145" width="640" height="360" src="https://www.youtube.com/embed/bWPkeq72Kh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="ep145" width="640" height="360" src="https://www.youtube.com/embed/bWPkeq72Kh0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <p><em>Bhoomiputra Ep. 145</em></p>
           </div>
         </section>

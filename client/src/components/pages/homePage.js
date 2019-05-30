@@ -27,7 +27,7 @@ class HomePage extends Component {
             <p>We mainly promote ZNBF[ zero budget natural farming, developed by Subash Palekar sir ],trying to convert regular farmers[ using synthetic chemical fertilizers and pesticides ] to use this farming technique. This technique involves using cow based and other natural products to give the benefits of organic farming as well as weeding out few of organic farming disadvantages[ by bring the produce per acre either equal to regular farming or even higher, the science involved in this specific type of farming also developed various pesticides to deal with almost any kind of problem ].</p>
             <div>
               <p>You can find more about the science behind ZNBF in this video by Subash Palekar Sir:</p>
-              <iframe title="The Science Behind ZNBF by Subash Palekar" width="789" height="444" src="https://www.youtube.com/embed/DALihIuF4FM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe title="The Science Behind ZNBF by Subash Palekar" width="789" height="444" src="https://www.youtube.com/embed/DALihIuF4FM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
