@@ -42,7 +42,7 @@ class HomePage extends Component {
             <p><em>This kind of greedy attitude in the industry is worsening the condition for the farmers.</em></p>
             <p>Moreover the accessibility to organic products are very limited unlike the widespread markets over the internet.</p> */}
             <h1>The Need</h1>
-            <p>Admit it! We[The producers as weel as consumers] are in the worst era in aspect of food.</p>
+            <p>Admit it! We [The producers as well as consumers] are in the worst era in aspect of food.</p>
             <p><strong>The Farmer's Side:</strong> The organic crop is broughth by the mediater at prices between 10-22% of market selling price,there is a lot of evil-minded buiseness taking over this organic food industry.This buiseness is just piling money in mediators pockets while threatening farmers lives.The mediators are selling the produce at a market price of 1.5-3[150%-300% higher] times the price of regular vegetables,fruits or other  farm  produce.</p>
             <p>This greed is worsening the entire community to the deep throat.</p>
             <p>Moreover the organic produce isb't available everywhere: only found in some supermarkets or some posh locations,the accessibility is ver limited not available like the widespread wet-markets.</p>

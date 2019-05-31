@@ -40,21 +40,21 @@
           margin: 0;
           color: $Color2;
           font-weight: bolder;
-          width: 700px;
+          width: px-to-vw(700px);
           text-align: center;
-          font-size: 3em;
+          font-size: em-to-vw(3);
         }
         button {
-          margin-top: 50px;
+          margin-top: px-to-vw(50px);
           background-color: transparent;
           color: $Color2;
-          border: 3px solid $Color2;
+          border: px-to-vw(3px) solid $Color2;
           transition: background-color 0.5s ease, color 0.5s ease;
-          font-size: 1em;
-          padding: 22px;
+          font-size: em-to-vw(1);
+          padding: px-to-vw(22px);
           font-weight: bold;
-          letter-spacing: 5px;
-          word-spacing: 5px;
+          letter-spacing: px-to-vw(5px);
+          word-spacing: px-to-vw(5px);
           &:hover {
             background-color: $Color2;
             color: $Color1;
@@ -78,6 +78,14 @@
       }
       div {
         margin: 25px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p {
+          align-self: flex-start;
+        }
         iframe {
           margin-top: 10px;
         }

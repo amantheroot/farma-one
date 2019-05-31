@@ -1,0 +1,6 @@
+@function px-to-vw($px){
+    @return ($px/1280px)*100vw;
+}
+@function em-to-vw($em){
+    @return (($em*16px)/1280px)*100vw;
+}
