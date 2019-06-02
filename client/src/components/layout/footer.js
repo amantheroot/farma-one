@@ -22,7 +22,7 @@ class Footer extends Component {
           </ul>
         </div>
         <div className="footer__copyright">
-          Copyright &copy; {new Date().getFullYear()} Aman Kumar
+          Copyright &copy; 2017 Farma One
         </div>
       </footer>
     );
